@@ -9,15 +9,15 @@ export default class PhysicsBound extends cc.Component {
 
 
     onLoad() {
-        let physicsManager = cc.director.getPhysicsManager();
-        physicsManager.enabled = true;
-        physicsManager.debugDrawFlags =
+        // let physicsManager = cc.director.getPhysicsManager();
+        // physicsManager.enabled = true;
+        // physicsManager.debugDrawFlags =
             // @ts-ignore
-            cc.PhysicsManager.DrawBits.e_jointBit |
+            // cc.PhysicsManager.DrawBits.e_jointBit |
             // @ts-ignore
-            cc.PhysicsManager.DrawBits.e_shapeBit |
+            // cc.PhysicsManager.DrawBits.e_shapeBit |
             // @ts-ignore
-            cc.PhysicsManager.DrawBits.e_aabbBit;
+            // cc.PhysicsManager.DrawBits.e_aabbBit;
 
         let width = this.node.width;
         let height = this.node.height;
