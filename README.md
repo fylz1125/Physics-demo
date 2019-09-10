@@ -19,8 +19,11 @@ cc.game.on(cc.game.EVENT_ENGINE_INITED, () => {
     // 设置调试信息
     physicsManager.debugDrawFlags = 
         // 0;
-        // cc.PhysicsManager.DrawBits.e_aabbBit |
+        // 绘制包围盒
+        cc.PhysicsManager.DrawBits.e_aabbBit |
+        // 绘制关节链接信息
         cc.PhysicsManager.DrawBits.e_jointBit |
+        // 绘制形状
         cc.PhysicsManager.DrawBits.e_shapeBit
         ;
 });
