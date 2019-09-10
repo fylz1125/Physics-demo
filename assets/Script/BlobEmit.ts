@@ -17,7 +17,7 @@ export default class BlobEmit extends cc.Component {
 
     onTouchBegan(event:cc.Event.EventTouch) {
         var touchLoc = event.touch.getLocation();
-
+        // 克隆已有节点
         var node = cc.instantiate(this.blob);
         var blob = node.getComponent(Blob);
         blob.init();

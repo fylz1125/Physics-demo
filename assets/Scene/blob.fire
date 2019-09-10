@@ -416,7 +416,7 @@
     "_enabled": true,
     "particleNumber": 12,
     "particleRadius": 30,
-    "sphereSize": 12,
+    "sphereSize": 14,
     "_id": "11dOd1e5ZITqNoLFMqowAA"
   },
   {
@@ -439,10 +439,10 @@
     "_lineCap": 0,
     "_fillColor": {
       "__type__": "cc.Color",
-      "r": 255,
-      "g": 255,
-      "b": 255,
-      "a": 255
+      "r": 251,
+      "g": 248,
+      "b": 252,
+      "a": 6
     },
     "_miterLimit": 10,
     "_id": "1eiiqbYIdDd5UALz8cnUK8"
