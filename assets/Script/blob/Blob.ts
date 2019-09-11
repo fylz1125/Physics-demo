@@ -93,6 +93,7 @@ export default class Blob extends cc.Component {
         collider.restitution = 0.4;
         collider.friction = 0.5;
         collider.radius = r;
+        
 
         return body;
         
