@@ -62,7 +62,68 @@ box2d引擎定义了三种刚体：**Static**， **Dynamic**， **Kinematic**。
 - **Animated :**`cc.RigidBodyType.Animated`</br>
     动画刚体，从 **Kinematic**类型衍生，主要用于刚体与动画编辑结合使用。
 
+## 刚体属性
+ - 质量：`let mass = rigidBody.getMass();`
+
+ - 线性速度：`let velocity = rigidBody.linearVelocity;`
+
+ - 速度衰减：`let damping = rigidBody.linearDamping;`
+
+ - 角速度：`let angVelocity = rigidBody.angularVelocity;`
+
+ - 角速度衰减：`let angDamping = rigidBody.angularDamping;`
+
+ - 固定旋转角：`rigidBody.fixedRotation = true;`
+
+## 物理碰撞组件
+**物理碰撞组件** 继承自 **碰撞组件**，提供了更丰富的属性和接口，用于完成更真实的物理仿真。
 
 
+## 物理碰撞组件属性
+- **sensor :** 指定是否为传感器类型，传感器类型的碰撞体会产生碰撞回调，但不会有实际的碰撞效果，类似于一个传感器。
 
+- **density :** 碰撞体密度，用于计算刚体质量。
 
+- **friction :** 摩擦系数，取值范围[0,1]。
+
+- **restitution :** 弹力系数，取值范围[0,1]。
+
+## 碰撞回调
+box2d引擎自行处理了大部分物理特性，例如物体在场景中移动互相撞击反弹等。
+
+但是在物理游戏中，很多情况下需要设计不同的行为逻辑以增加游戏性，比如物体碰撞时会有特殊的声音，角色碰到怪物时会死亡等。
+
+我们需要一个方式来获取碰撞信息，以便于加入我们的游戏逻辑。物理引擎为我们提供了碰撞回调的方式，在回调函数里面我们可以插入我们的逻辑代码为所欲为。
+
+步骤如下：
+
+1. 在刚体组件中开启碰撞监听器，**Enabled Contact Listener**。
+
+2. 实现碰撞回调函数：
+
+```js
+// 只在两个碰撞体开始接触时被调用一次
+onBeginContact(contact: cc.PhysicsContact,
+        selfCollider: cc.PhysicsContact,
+        otherCollider: cc.PhysicsCollider){
+            // do something
+    }
+// 只在两个碰撞体结束接触时被调用一次
+onEndContact(contact: cc.PhysicsContact,
+        selfCollider: cc.PhysicsContact,
+        otherCollider: cc.PhysicsCollider){
+            // do something
+    }
+// 每次将要处理碰撞体接触逻辑时被调用
+onPreSolve(contact: cc.PhysicsContact,
+        selfCollider: cc.PhysicsContact,
+        otherCollider: cc.PhysicsCollider){
+            // do something
+    }
+// 每次处理完碰撞体接触逻辑时被调用
+onPostSolve(contact: cc.PhysicsContact,
+        selfCollider: cc.PhysicsContact,
+        otherCollider: cc.PhysicsCollider){
+            // do something
+    }
+```

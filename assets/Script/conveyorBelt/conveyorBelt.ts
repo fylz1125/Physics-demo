@@ -10,7 +10,9 @@ export default class conveyorBelt extends cc.Component {
     @property
     tangentSpeed = 5;
 
-    onPreSolve(contact:cc.PhysicsContact,selfCollider:cc.PhysicsContact,otherCollider:cc.PhysicsCollider) {
+    onPreSolve(contact: cc.PhysicsContact,
+        selfCollider: cc.PhysicsContact,
+        otherCollider: cc.PhysicsCollider){
         contact.setTangentSpeed(this.tangentSpeed);
     }
 
