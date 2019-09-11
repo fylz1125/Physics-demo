@@ -5,13 +5,13 @@
 cc.game.on(cc.game.EVENT_ENGINE_INITED, () => {
     let physicsManager = cc.director.getPhysicsManager();
     physicsManager.enabled = true;
-    
-    physicsManager.debugDrawFlags = 0;
+
+    physicsManager.debugDrawFlags = //0;
         // @ts-ignore
         // cc.PhysicsManager.DrawBits.e_aabbBit |
         // @ts-ignore
-        // cc.PhysicsManager.DrawBits.e_jointBit |
+        cc.PhysicsManager.DrawBits.e_jointBit |
         // @ts-ignore
-        // cc.PhysicsManager.DrawBits.e_shapeBit
+        cc.PhysicsManager.DrawBits.e_shapeBit
         ;
 });
