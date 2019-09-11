@@ -236,6 +236,7 @@
       "__id__": 2
     },
     "_enabled": true,
+    "mouseJoint": false,
     "_id": "81MdRY7LZJbrFfM/6rM4zj"
   },
   {
