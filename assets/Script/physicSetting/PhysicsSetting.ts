@@ -3,6 +3,7 @@
 // 更多源码在微信公众号 darkpalm
 
 cc.game.on(cc.game.EVENT_ENGINE_INITED, () => {
+    cc.macro.ENABLE_WEBGL_ANTIALIAS = true;
     let physicsManager = cc.director.getPhysicsManager();
     physicsManager.enabled = true;
 
