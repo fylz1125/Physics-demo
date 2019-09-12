@@ -5,7 +5,7 @@
 const {ccclass, property} = cc._decorator;
 
 @ccclass
-export default class ConveyorBelt extends cc.Component {
+export default class Conveyor extends cc.Component {
 
     @property
     tangentSpeed = 5;
