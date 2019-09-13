@@ -7966,7 +7966,7 @@ declare namespace cc {
 		@param end The end point of line
 		@param isSegment whether this line is a segment 
 		*/
-		static pointLineDistance(point: Vec2, start: Vec2, end: Vec2, isSegment: boolean): boolean;	
+		static pointLineDistance(point: Vec2, start: Vec2, end: Vec2, isSegment: boolean): number;	
 	}	
 	/** !#en Polygon Collider.
 	!#zh 多边形碰撞组件 */
